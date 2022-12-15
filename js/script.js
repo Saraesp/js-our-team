@@ -51,11 +51,11 @@ const team = [
 ]
 
 //MILESTONE 1 Stampa in Console
-const card_list = document.getElementById('card-container');
-for(let i = 0; i < team.length; i++){
-    let member = team[i];
+// const card_list = document.getElementById('card-container');
+// for(let i = 0; i < team.length; i++){
+//     let member = team[i];
 
-    console.log(`${member.name}, ${member.role}, ${member.image}`)
+//     console.log(`${member.name}, ${member.role}, ${member.image}`)
 
 
 // MILESTONE 2: Stampare le stesse informazioni su DOM
@@ -68,9 +68,33 @@ for(let i = 0; i < team.length; i++){
 // }
 
 //BONUS 1
-card_list.innerHTML +=` 
-    <img src="./img/${member.image}" width="200px"/>
-    <p>${member.role}</p>
-    <p>${member.name}</p>`
+// card_list.innerHTML +=` 
+//     <img src="./img/${member.image}" width="200px"/>
+//     <p>${member.role}</p>
+//     <p>${member.name}</p>`
+
+// }
+
+function drawTeam(person){
+    const card_list = document.getElementById('card-container');
+    let member_card = `
+        <div class="team-card">
+            <div class="card-img">
+                <img src="./img/${person.image}" class="img-fluid"/>
+            </div>
+            <div class="card-text bg-white p-2">
+                <h5 class="text-center">${person.name}</h5>
+                <p>${person.role}</p>
+            </div>
+        </div>
+    `
+
+    card_list.innerHTML += member_card;
+}
+
+for(let i = 0; i < team.length; i++){
+    let member = team[i];
+    drawTeam(member);
+    console.log(`${member.name}, ${member.role}, ${member.image}`)
 
 }
