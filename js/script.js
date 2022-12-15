@@ -50,10 +50,18 @@ const team = [
     },
 ]
 
-//MILESTONE 1
-
+//MILESTONE 1 Stampa in Console
 for(let i = 0; i < team.length; i++){
     let member = team[i];
 
     console.log(`${member.name}, ${member.role}, ${member.image}`)
+}
+
+// MILESTONE 2: Stampare le stesse informazioni su DOM
+const unordered_list = document.querySelector('.unstyled-list')
+for(let i = 0; i < team.length; i++){
+    let member = team[i];
+
+    let list_item = `<li>${member.name}, ${member.role}, ${member.image}</li>`;
+    unordered_list.innerHTML += list_item;
 }
