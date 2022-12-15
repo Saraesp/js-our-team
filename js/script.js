@@ -51,17 +51,26 @@ const team = [
 ]
 
 //MILESTONE 1 Stampa in Console
+const card_list = document.getElementById('card-container');
 for(let i = 0; i < team.length; i++){
     let member = team[i];
 
     console.log(`${member.name}, ${member.role}, ${member.image}`)
-}
+
 
 // MILESTONE 2: Stampare le stesse informazioni su DOM
-const unordered_list = document.querySelector('.unstyled-list')
-for(let i = 0; i < team.length; i++){
-    let member = team[i];
+// const unordered_list = document.querySelector('.unstyled-list')
+// for(let i = 0; i < team.length; i++)
+//     let member = team[i];
 
-    let list_item = `<li>${member.name}, ${member.role}, ${member.image}</li>`;
-    unordered_list.innerHTML += list_item;
+//     let list_item = `<li>${member.name}, ${member.role}, ${member.image}</li>`;
+//     unordered_list.innerHTML += list_item;
+// }
+
+//BONUS 1
+card_list.innerHTML +=` 
+    <img src="./img/${member.image}" width="200px"/>
+    <p>${member.role}</p>
+    <p>${member.name}</p>`
+
 }
