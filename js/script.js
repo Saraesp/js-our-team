@@ -12,7 +12,7 @@
 // BONUS 2: Organizzare i singoli membri in card/schede
 
 // MILESTONE 0: Creare l’array di oggetti con le informazioni fornite.
-const teams = [
+const team = [
     { 
         name: 'Wayne Barnett',
         role: 'Founder & CEO',
@@ -49,3 +49,11 @@ const teams = [
         image: 'barbara-ramos-graphic-designer.jpg',
     },
 ]
+
+//MILESTONE 1
+
+for(let i = 0; i < team.length; i++){
+    let member = team[i];
+
+    console.log(`${member.name}, ${member.role}, ${member.image}`)
+}
